@@ -19,9 +19,10 @@ const getDefaultDrawerWidth = ({
    */
   const smallerAxisSize = Math.min(height, width);
   const isLandscape = width > height;
+  const appBarHeight = Platform.OS === 'ios' ? (isLandscape ? 32 : 44) : 64;
+  const isSmallScreen = smallerAxisSize < 412;
   const isTablet = smallerAxisSize >= 600;
-  const appBarHeight = Platform.OS === 'ios' ? (isLandscape ? 32 : 44) : 56;
-  const maxWidth = isTablet ? 320 : 280;
+  const maxWidth = isTablet ? 320 : isSmallScreen ? 280 : 360;
 
   return Math.min(smallerAxisSize - appBarHeight, maxWidth);
 };
