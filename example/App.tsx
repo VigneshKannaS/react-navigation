@@ -6,7 +6,7 @@ import { Asset } from 'expo-asset';
 import * as Rt from 'react';
 
 import { App } from './src/index';
-put mairu in hair:
+abcd
 
 Asset.loadAsync(Assets);
 
